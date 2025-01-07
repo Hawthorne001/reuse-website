@@ -6,7 +6,9 @@
 # Configure webserver
 # =============================================================================
 
-FROM bitnami/apache:2.4 as webserver-prep
+# TODO: Switch back to 2.4. <https://github.com/bitnami/containers/issues/71316>
+# currently makes 2.4.62 unviable.
+FROM bitnami/apache:2.4.61 as webserver-prep
 
 COPY reuse.software.conf /vhosts/
 
@@ -18,7 +20,7 @@ RUN sed -i -r 's/#LoadModule expires_module/LoadModule expires_module/' /opt/bit
 # Development Preparation: run po4a and hugo
 # =============================================================================
 
-FROM alpine:3.16 as dev-prep
+FROM alpine:3.20 as dev-prep
 
 # Dependencies
 RUN apk --no-cache add bash perl-yaml-tiny po4a hugo python3 diffutils

@@ -4,8 +4,8 @@
 
 # REUSE-IgnoreStart
 
-title: "REUSE Specification – Version 3.2"
-subtitle: "2024-07-03"
+title: "REUSE Specification – Version 3.3"
+subtitle: "2024-11-14"
 ---
 
 This specification defines a standardised method for declaring copyright and
@@ -19,7 +19,7 @@ This specification implements [IETF RFC 2119: Key words for use in RFCs to
 Indicate Requirement Levels](https://tools.ietf.org/html/rfc2119).
 
 For the revision history of this specification, please see [the change
-log](https://github.com/fsfe/reuse-website/blob/main/CHANGELOG.md).
+log](https://git.fsfe.org/reuse/docs/src/branch/stable/CHANGELOG.md).
 
 ## Definitions
 
@@ -68,13 +68,16 @@ Covered Files are any file which must contain Licensing Information. This is
 equal to all files in a project, with the exception of:
 
 - The License Files stored in the `LICENSES/` directory.
-- `COPYING` and `LICENSE`, with or without file extensions.
+- `COPYING`, `LICENSE`, and `LICENCE`. These MAY also contain a dash or dot
+  separator followed by additional metadata, like `LICENSE-MIT`, `COPYING.GPL`,
+  or `LICENCE.md`. These files SHOULD be in the root of the Project.
 - The files belonging to the Project's version control system (example:
   `.git/`).
 - The files ignored by the version control system (example: files listed in
   `.gitignore`).
 - Submodules of the Project's version control system and Meson subprojects. Each
   submodule and Meson subproject is understood as a separate Project.
+- `REUSE.toml` files.
 - The files in the `.reuse/` directory in the root of the Project. This
   directory MUST contain only files relevant for the operation of the REUSE
   Tool.
@@ -112,10 +115,10 @@ exception that is part of any SPDX License Expression in any Licensing
 Information associated with any Covered File, there MUST exist a License File as
 defined in this section.
 
-You MAY include a `COPYING` or `LICENSE` file (with or without file extensions)
-in your project for compliance with other standards, conventions, or tools.
-These files MAY contain a copy of the license text, a summary of your licensing,
-or anything else. These files are ignored by the REUSE Tool.
+You MAY include `COPYING` or `LICENSE` files in your project for compliance with
+other standards, conventions, or tools. These files MAY contain a copy of the
+license text, a summary of your licensing, or anything else. These files are
+ignored by the REUSE Tool.
 
 ## Licensing Information
 
@@ -174,11 +177,14 @@ An example of a comment header:
 #### In-line Snippet comments
 
 Sometimes Licensing Information only applies to a certain Snippet instead of the
-whole Commentable File. For these cases SPDX snippet tags MUST be used for that
-Snippet (as defined in [SPDX Specification, Annex
+whole Commentable File. You SHOULD use SPDX snippets to license these Snippets.
+When implementing SPDX snippets, you MUST use SPDX snippet tags (as defined in
+[SPDX Specification, Annex
 H](https://spdx.github.io/spdx-spec/v2.3/file-tags/#h3-snippet-tags-format)).
 This means that Copyright Notices inside of Snippets MUST be prefixed with
 `SPDX-SnippetCopyrightText`.
+
+Each SPDX snippet that is opened MUST be closed with `SPDX-SnippetEnd`.
 
 Like with comment headers, the SPDX snippet tags SHOULD be commented.
 
@@ -228,6 +234,8 @@ companion files) is impossible or undesirable.
 A `REUSE.toml` file MAY be located in any directory, and can cover files that are
 within its directory or deeper. You MAY have multiple `REUSE.toml` files in
 different directories.
+
+Any `REUSE.toml` file ignored by VCS is not searched for Licensing Information.
 
 The `version` key (REQUIRED) MUST have an integer value representing the schema
 version of the file. This specification describes version 1 of `REUSE.toml`.
