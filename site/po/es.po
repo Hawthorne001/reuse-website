@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translators@lists.fsfe.org\n"
 "POT-Creation-Date: 2025-11-27 19:03+0000\n"
-"PO-Revision-Date: 2026-04-27 16:09+0000\n"
+"PO-Revision-Date: 2026-04-29 16:09+0000\n"
 "Last-Translator: eulalio <eulalio@disroot.org>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/fsfe/reuse-"
 "website-markdown/es/>\n"
@@ -1307,6 +1307,10 @@ msgid ""
 "your-code)  makes a good case for using the year of initial publication of "
 "the file."
 msgstr ""
+"La opción que elijas, en última instancia, depende de ti. [Este artículo]"
+"(https://matija.suklje.name/how-and-why-to-properly-write-copyright-"
+"statements-in-your-code)  es una buena razón para usar el año de publicación "
+"inicial del archivo."
 
 #. type: Title ##
 #: site/content/en/faq.md
@@ -1914,7 +1918,7 @@ msgstr ""
 #: site/content/en/faq.md
 #, no-wrap
 msgid "How do I ... {#howto}"
-msgstr ""
+msgstr "¿Cómo ... {#howto}"
 
 #. type: Title ##
 #: site/content/en/faq.md
@@ -1957,18 +1961,13 @@ msgstr "crear una lista de materiales {#bill-of-materials}"
 
 #. type: Plain text
 #: site/content/en/faq.md
-#, fuzzy
-#| msgid ""
-#| "Install the reuse tool and run `reuse spdx -o reuse.spdx` in the project "
-#| "root to create an [SPDX document](https://spdx.org/spdx-specification-21-"
-#| "web-version)."
 msgid ""
 "Install the reuse tool and run `reuse spdx -o reuse.spdx` in the project "
 "root to create an [SPDX document](https://spdx.dev/use/specifications/)."
 msgstr ""
 "Instale la herramienta reuse y ejecute `reuse spdx -o reuse.spdx` en la raíz "
-"del proyecto para crear un [documento SPDX](https://spdx.org/spdx-"
-"specification-21-web-version)."
+"del proyecto para crear un [documento SPDX](https://spdx.dev/use/"
+"specifications/)."
 
 #. type: Title ##
 #: site/content/en/faq.md
