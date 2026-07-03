@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translators@lists.fsfe.org\n"
 "POT-Creation-Date: 2025-11-27 19:03+0000\n"
-"PO-Revision-Date: 2026-07-01 14:01+0000\n"
+"PO-Revision-Date: 2026-07-04 14:01+0000\n"
 "Last-Translator: Lee Flower <d9920713549@163.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/fsfe/reuse-website-markdown/zh_Hans/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: site/content/en/comparison.md
@@ -124,7 +124,7 @@ msgstr ""
 #: site/content/en/dev.md
 #, no-wrap
 msgid "Help for developers"
-msgstr ""
+msgstr "开发者帮助"
 
 #. type: Plain text
 #: site/content/en/dev.md
@@ -132,6 +132,8 @@ msgid ""
 "Licensing should be easy for developers. We provide several tools and "
 "services to allow you to concentrate on coding."
 msgstr ""
+"许可证的选择对开发者来说应该是轻松的，为此，我们提供了多种工具和服务来帮助你"
+"专注于代码的编写。"
 
 #. type: Plain text
 #: site/content/en/dev.md
@@ -4621,36 +4623,36 @@ msgstr ""
 #: site/content/en/spec-3.2.md
 #, no-wrap
 msgid "Format of Copyright Notices"
-msgstr ""
+msgstr "版权声明的格式"
 
 #. type: Plain text
 #: site/content/en/spec-3.2.md
 msgid ""
 "A Copyright Notice MUST start with a tag, word or symbol (collectively: "
 "prefixes) from the following list:"
-msgstr ""
+msgstr "版权声明必须以以下列表中的标签、单词或符号（统称为“前缀”）开头："
 
 #. type: Bullet: '- '
 #: site/content/en/spec-3.2.md
 msgid "`SPDX-FileCopyrightText` (or `SPDX-SnippetCopyrightText` in Snippets)"
-msgstr ""
+msgstr "`SPDX-FileCopyrightText`（“代码片段”中为 `SPDX-SnippetCopyrightText`）"
 
 #. type: Bullet: '- '
 #: site/content/en/spec-3.2.md
 msgid "Copyright"
-msgstr ""
+msgstr "版权所有"
 
 #. type: Bullet: '- '
 #: site/content/en/spec-3.2.md
 msgid "©"
-msgstr ""
+msgstr "©"
 
 #. type: Plain text
 #: site/content/en/spec-3.2.md
 msgid ""
 "It is RECOMMENDED to use the `SPDX-FileCopyrightText` tag. You MAY add "
 "'(C)', '(c)' or '©' after the prefix."
-msgstr ""
+msgstr "建议使用 `SPDX-FileCopyrightText` 标签。你可在前缀后添加‘(C)’、‘(c)’或‘©’。"
 
 #. type: Plain text
 #: site/content/en/spec-3.2.md
