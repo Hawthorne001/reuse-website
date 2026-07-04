@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translators@lists.fsfe.org\n"
 "POT-Creation-Date: 2025-11-27 19:03+0000\n"
-"PO-Revision-Date: 2026-06-25 01:56+0000\n"
+"PO-Revision-Date: 2026-07-04 14:01+0000\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/fsfe/"
 "reuse-website-markdown/pt_BR/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: site/content/en/comparison.md
@@ -465,19 +465,20 @@ msgid ""
 msgstr ""
 "# SPDX-FileCopyrightText: 2020 Free Software Foundation Europe e.V.\n"
 "# SPDX-License-Identifier: CC0-1.0\n"
-"name: Verificação de conformidade com REUSE\n"
+"name: REUSE compliance check\n"
 "on: [push, pull_request]\n"
+"\n"
 "jobs:\n"
-"test:\n"
-"runs-on: <uma tag para seu executor>\n"
-"container: fsfe/reuse:latest\n"
-"steps:\n"
-"- run: |\n"
-"apk add nodejs\n"
-"- uses: actions/checkout@v5\n"
-"- name: Verificar conformidade com REUSE\n"
-"run: |\n"
-"reuse lint\n"
+"  test:\n"
+"    runs-on: <uma tag do seu runner>\n"
+"    container: fsfe/reuse:latest\n"
+"    steps:\n"
+"      - run: |\n"
+"          apk add nodejs\n"
+"      - uses: actions/checkout@v5\n"
+"      - name: Verify REUSE compliance\n"
+"        run: |\n"
+"          reuse lint\n"
 
 #. type: Plain text
 #: site/content/en/dev.md
@@ -1463,7 +1464,7 @@ msgid ""
 "software [Free Software](https://fsfe.org/about/basics/freesoftware.en.html)."
 msgstr ""
 "Acima de tudo, se você valoriza a liberdade, você deve escolher uma licença "
-"que torne seu software um [Software Livre] (https://fsfe.org/about/basics/"
+"que torne seu software um [Software Livre](https://fsfe.org/about/basics/"
 "freesoftware.html)."
 
 #. type: Title ##
@@ -4110,6 +4111,15 @@ msgid ""
 "  * License-Filename: LICENSES/BSD-2-Clause_Charlie.txt\n"
 "  */\n"
 msgstr ""
+" /*\n"
+"  * Este arquivo faz parte do projeto X. Ele está protegido por\n"
+"  * direitos autorais dos colaboradores registrados no histórico\n"
+"  * de controle de versão do arquivo, disponível em sua\n"
+"  * localização original: http://git.example.com/X/nome-do-arquivo.c\n"
+"  * \n"
+"  * SPDX-License-Identifier: BSD-2-Clause\n"
+"  * License-Nome-do-Arquivo: LICENSES/BSD-2-Clause_Carlos.txt\n"
+"  */\n"
 
 #. type: Plain text
 #: site/content/en/spec-1.2.md
@@ -4124,6 +4134,18 @@ msgid ""
 "> * Make references to the license text and the SPDX identifier from each source code file.\n"
 "> * Include license and copyright information also for files which can not include a proper header, either in a separate .license file, or using the DEP-5/copyright specification.\n"
 msgstr ""
+"> ### Tenha em mente\n"
+">\n"
+"> * Utilize um estilo consistente para os cabeçalhos em todo o projeto.\n"
+"> * Não remova cabeçalhos existentes; apenas adicione novos a eles.\n"
+"> * Considere utilizar sistemas de controle de versão para manter um "
+"registro dos detentores de direitos autorais.\n"
+"> * Mantenha o sistema de controle de versão público, caso o utilize.\n"
+"> * Faça referência ao texto da licença e ao identificador SPDX em cada "
+"arquivo de código-fonte.\n"
+"> * Inclua informações sobre licença e direitos autorais também para "
+"arquivos que não permitam a inclusão de um cabeçalho adequado, seja em um "
+"arquivo .license` separado ou utilizando a especificação DEP-5/copyright.\n"
 
 #. type: Plain text
 #: site/content/en/spec-1.2.md
@@ -4134,12 +4156,18 @@ msgid ""
 "archived freely and ensure project is archived by institutions dedicated to "
 "long-term preservation of software code, eg. Software Heritage."
 msgstr ""
+"[^3]: Estabeleça uma governança de projeto comprometida com o acesso "
+"público; avalie o material adicionado ao projeto para protegê-lo contra "
+"riscos de remoção; inclua apenas material sob uma licença livre e de código "
+"aberto, permitindo sua cópia e arquivamento livres; e assegure que o projeto "
+"seja arquivado por instituições dedicadas à preservação de longo prazo de "
+"código de software, como a Software Heritage."
 
 #. type: Title ##
 #: site/content/en/spec-1.2.md site/content/en/spec-2.0.md
 #, no-wrap
 msgid "3. Provide an inventory for included software"
-msgstr ""
+msgstr "3. Forneça um inventário do software incluído"
 
 #. type: Plain text
 #: site/content/en/spec-1.2.md
@@ -4148,6 +4176,10 @@ msgid ""
 "copyright information, you may include a bill of material for your project, "
 "but you should only do so if this is generated automatically."
 msgstr ""
+"Além dos arquivos de licença incluídos no projeto e das informações de "
+"direitos autorais presentes nos arquivos, você pode incluir uma lista de "
+"materiais para o seu projeto, mas só deve fazê-lo se ela for gerada "
+"automaticamente."
 
 #. type: Plain text
 #: site/content/en/spec-1.2.md
@@ -4158,6 +4190,11 @@ msgid ""
 "best not to have a bill of material, but to rely only on the information "
 "coupled with the source code files."
 msgstr ""
+"Uma lista de materiais pode ser muito complexa e extensa, tornando sua "
+"manutenção difícil. Se ela não for gerada automaticamente, é muito provável "
+"que alguém se esqueça de atualizá-la ao fazer alterações. Nesses casos, é "
+"melhor não ter uma lista de materiais e confiar apenas nas informações "
+"associadas aos arquivos de código-fonte."
 
 #. type: Plain text
 #: site/content/en/spec-1.2.md
@@ -4169,6 +4206,12 @@ msgid ""
 "on files which include a standard header, or which includes the header in a "
 "separate license file."
 msgstr ""
+"Se você dispõe de um meio de criar automaticamente uma lista de materiais e "
+"decide fazê-lo, deve gerá-la a partir das informações mais confiáveis "
+"disponíveis sobre cada arquivo do projeto. Isso inclui informações de "
+"direitos autorais mantidas em sistemas de controle de versão e licenças em "
+"arquivos que contenham um cabeçalho padrão ou que incluam o cabeçalho em um "
+"arquivo de licença separado."
 
 #. type: Plain text
 #: site/content/en/spec-1.2.md
@@ -4178,6 +4221,10 @@ msgid ""
 "bill of material, which license is relevant for the output files depending "
 "on the included source code."
 msgstr ""
+"Você também pode optar por incluir na lista de materiais os arquivos de "
+"saída gerados durante a compilação do projeto, permitindo indicar, por meio "
+"dessa lista, qual licença se aplica aos arquivos de saída com base no código-"
+"fonte incluído."
 
 #. type: Plain text
 #: site/content/en/spec-1.2.md
@@ -4186,6 +4233,9 @@ msgid ""
 "included in a file in the top level directory of your repository called "
 "`LICENSE.spdx`."
 msgstr ""
+"A lista de materiais deve estar em conformidade com a especificação SPDX e "
+"ser incluída em um arquivo chamado `LICENSE.spdx` no diretório raiz do seu "
+"repositório."
 
 #. type: Plain text
 #: site/content/en/spec-1.2.md
@@ -4198,12 +4248,21 @@ msgid ""
 "> * Make your bill of material conformant to the SPDX specification.\n"
 "> * It doesn't hurt to run your project through ScanCode or FOSSology, to make sure these tools can parse and understand your project's licensing.\n"
 msgstr ""
+"> ### Tenha em mente\n"
+">\n"
+"> * Não crie uma lista de materiais se não puder gerá-la automaticamente.\n"
+"> * Se você gerar uma automaticamente, é útil incluí-la.\n"
+"> * Certifique-se de que sua lista de materiais esteja em conformidade com a "
+"especificação SPDX.\n"
+"> * Não custa nada submeter seu projeto a ferramentas como ScanCode ou "
+"FOSSology para garantir que elas consigam analisar e compreender o "
+"licenciamento do projeto.\n"
 
 #. type: Yaml Front Matter Hash Value: title
 #: site/content/en/spec-2.0.md
 #, no-wrap
 msgid "REUSE Practices – Version 2.0"
-msgstr ""
+msgstr "Práticas de REUSE – Versão 2.0"
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4212,6 +4271,9 @@ msgid ""
 "texts. Regardless of which license you use, you should include the license "
 "text in your project."
 msgstr ""
+"As licenças de software livre e de código aberto são padronizadas e possuem "
+"textos padrão. Independentemente da licença utilizada, você deve incluir o "
+"texto da licença em seu projeto."
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4224,6 +4286,13 @@ msgid ""
 "uniquely reference each license.  For instance, the GNU GPL version 3 has "
 "`GPL-3.0` as shorthand identifier."
 msgstr ""
+"A maneira mais fácil de garantir que você forneça uma licença inalterada é "
+"copiá-la na íntegra a partir deste [repositório de licenças](https://"
+"github.com/spdx/license-list) mantido pelo Grupo de Trabalho SPDX. O Grupo "
+"de Trabalho SPDX mantém uma [lista de licenças comumente utilizadas][spdx-"
+"licenses]. Cada licença possui um nome abreviado (chamado de identificador "
+"SPDX) que pode ser usado para referenciar cada licença de forma única. Por "
+"exemplo, a GNU GPL versão 3 tem `GPL-3.0` como identificador abreviado."
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4233,6 +4302,11 @@ msgid ""
 "your repository with the name `LICENSE`, `LICENCE`, `COPYING` or `COPYRIGHT` "
 "(you may attach some suffix to the filename as well, such as `LICENSE.txt`)."
 msgstr ""
+"Se o seu projeto incluir apenas código licenciado sob uma única licença, "
+"você pode fornecer o texto dessa licença em um arquivo no diretório raiz do "
+"seu repositório com o nome `LICENSE`, `LICENCE`, `COPYING` ou `COPYRIGHT` "
+"(você também pode adicionar um sufixo ao nome do arquivo, como `LICENSE.txt`)"
+"."
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4243,6 +4317,12 @@ msgid ""
 "license because some parts may be written by Alice and others by Bob, "
 "resulting in two different license files."
 msgstr ""
+"Algumas licenças, como a licença BSD de 2 cláusulas, existem em muitas "
+"variações nas quais a única diferença é o nome do detentor dos direitos "
+"autorais no texto da licença. Seu projeto pode acabar incluindo múltiplas "
+"versões da mesma licença BSD de 2 cláusulas porque algumas partes podem ter "
+"sido escritas por Alice e outras por Bob, resultando em dois arquivos de "
+"licença diferentes."
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4252,6 +4332,11 @@ msgid ""
 "the common places to find licenses.  If you place your license elsewhere, it "
 "is possible that humans and computers alike may overlook it."
 msgstr ""
+"Depois de adicionar todos os seus arquivos de licença, eles devem "
+"corresponder ao padrão glob `{LICENSE*, LICENCE*, COPYING*, COPYRIGHT*, "
+"LICENSES/**}`. Esses são os locais comuns onde se encontram licenças. Se "
+"você colocar sua licença em outro lugar, é possível que tanto pessoas quanto "
+"computadores deixem de notá-la."
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4262,6 +4347,11 @@ msgid ""
 "simply include the name of the license into the filename: The license file "
 "for `GPL-3.0` becomes `LICENSES/GPL-3.0.txt`."
 msgstr ""
+"Para poder referenciar o arquivo de licença a partir do seu código-fonte, "
+"você deve incorporar o identificador SPDX (por exemplo, `GPL-3.0`, `MIT`) de "
+"cada licença no arquivo de licença correspondente. A maneira mais fácil de "
+"fazer isso é simplesmente incluir o nome da licença no nome do arquivo: o "
+"arquivo de licença para `GPL-3.0` passa a ser `LICENSES/GPL-3.0.txt`."
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4275,6 +4365,14 @@ msgid ""
 "with the `License-Text` tag to signal the start of your license.  The header "
 "may include other tags."
 msgstr ""
+"Se não for possível renomear o arquivo (por exemplo, se você quiser manter o "
+"texto da licença em `COPYING`), você deve adicionar um cabeçalho ao arquivo "
+"no formato \"tag-valor\" (chave-valor). Você pode adicionar esse cabeçalho "
+"ao próprio arquivo de licença ou a um arquivo com o mesmo nome, mas com o "
+"sufixo `.license`. O cabeçalho deve incluir uma tag `Valid-License-"
+"Identifier`, cujo valor deve ser o identificador SPDX da sua licença. O "
+"cabeçalho deve terminar com a tag `License-Text` para sinalizar o início do "
+"texto da licença. O cabeçalho pode incluir outras tags."
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4282,6 +4380,9 @@ msgid ""
 "This is an example of an MIT license file, which conveys that all references "
 "to the SPDX identifier `MIT` should point to this license file."
 msgstr ""
+"Este é um exemplo de arquivo de licença MIT, que indica que todas as "
+"referências ao identificador SPDX `MIT` devem apontar para este arquivo de "
+"licença."
 
 #. type: Fenced code block
 #: site/content/en/spec-2.0.md
@@ -4298,6 +4399,17 @@ msgid ""
 "copy of this software and associated documentation files (the \"Software\"),\n"
 " etc...\n"
 msgstr ""
+"Valid-License-Identifier: MIT\n"
+"License-Text:\n"
+"\n"
+"MIT License\n"
+"\n"
+"Copyright (c) <ano> <detentores do direito autoral>\n"
+"\n"
+"Permission is hereby granted, free of charge, to any person obtaining a\n"
+"copy of this software and associated documentation files (the \"Software\")"
+",\n"
+" etc...\n"
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4306,6 +4418,9 @@ msgid ""
 "be noted that the license text itself may not necessarily be released under "
 "that license, nor does the tag claim that."
 msgstr ""
+"Embora o identificador deva corresponder a uma licença da lista de licenças "
+"SPDX, vale ressaltar que o texto da licença em si não precisa "
+"necessariamente ser disponibilizado sob essa licença, nem a tag afirma isso."
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4315,6 +4430,10 @@ msgid ""
 "`GPL-2.0+`, but please note that it is not mandatory to list `GPL-2.0+` "
 "separately."
 msgstr ""
+"O identificador de licença pode ser repetido se o mesmo arquivo de licença "
+"for utilizado com múltiplos identificadores de licença. O exemplo abaixo "
+"refere-se a `GPL-2.0` e `GPL-2.0+`, mas observe que não é obrigatório listar "
+"`GPL-2.0+` separadamente."
 
 #. type: Fenced code block
 #: site/content/en/spec-2.0.md
@@ -4323,6 +4442,8 @@ msgid ""
 "Valid-License-Identifier: GPL-2.0\n"
 "Valid-License-Identifier: GPL-2.0+\n"
 msgstr ""
+"Valid-License-Identifier: GPL-2.0\n"
+"Valid-License-Identifier: GPL-2.0+\n"
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4332,12 +4453,16 @@ msgid ""
 "modified version of a license included in that list, you should create a custom\n"
 "identifier for it in the form `LicenseRef-<unique_code>`.\n"
 msgstr ""
+"Se a licença não estiver incluída na lista de licenças SPDX, ou se for uma\n"
+"versão modificada de uma licença presente nessa lista, você deve criar um\n"
+"identificador personalizado para ela no formato `LicenseRef-<código_único>"
+"`.\n"
 
 #. type: Fenced code block
 #: site/content/en/spec-2.0.md
 #, no-wrap
 msgid "Valid-License-Identifier: LicenseRef-MyLicense\n"
-msgstr ""
+msgstr "Valid-License-Identifier: LicenseRef-MinhaLicença\n"
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4348,6 +4473,12 @@ msgid ""
 "same header style or the tags `SPDX-Exception-Identifier` and `Exception-"
 "Text` instead. This is an example of a valid exception:"
 msgstr ""
+"Na eventualidade (pouco provável) de o seu código-fonte incluir exceções, "
+"como a [Classpath exception 2.0](https://spdx.org/licenses/Classpath-"
+"exception-2.0.html), você pode incluí-las no mesmo local das suas licenças, "
+"utilizando o mesmo estilo de cabeçalho ou, alternativamente, as tags `SPDX-"
+"Exception-Identifier` e `Exception-Text`. Este é um exemplo de uma exceção "
+"válida:"
 
 #. type: Fenced code block
 #: site/content/en/spec-2.0.md
@@ -4360,6 +4491,12 @@ msgid ""
 " making a combined work based on this library. Thus, the terms and\n"
 " conditions of the GNU General Public License cover the whole combination. \n"
 msgstr ""
+"SPDX-Exception-Identifier: Classpath-exception-2.0\n"
+"Exception-Text:\n"
+"\n"
+" Linking this library statically or dynamically with other modules is\n"
+" making a combined work based on this library. Thus, the terms and\n"
+" conditions of the GNU General Public License cover the whole combination. \n"
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4371,11 +4508,19 @@ msgid ""
 ">   the filename or by inserting a header, such that you can refer to the\n"
 ">   license from the source code files.\n"
 msgstr ""
+"> * Não altere os textos das licenças; utilize a versão literal (íntegra) do "
+"texto da licença.\n"
+"> * Não remova textos de licenças; inclua os textos de licença de todo o "
+"software.\n"
+"> * Inclua o identificador SPDX em cada arquivo de licença, seja no\n"
+">   nome do arquivo ou inserindo um cabeçalho, de modo que seja possível "
+"fazer referência à\n"
+">   licença a partir dos arquivos de código-fonte.\n"
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
 msgid "[spdx-licenses]: https://spdx.org/licenses/"
-msgstr ""
+msgstr "[spdx-licenses]: https://spdx.org/licenses/"
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4387,6 +4532,13 @@ msgid ""
 "license information: Who are the copyright holders and under which "
 "license(s) do they release the file?"
 msgstr ""
+"Arquivos de código-fonte são frequentemente reutilizados em múltiplos "
+"projetos, extraídos de sua origem e reaproveitados, ou acabam em "
+"repositórios onde ficam separados de sua origem. Portanto, você deve "
+"garantir que todos os arquivos do seu projeto contenham um cabeçalho de "
+"comentário que informe os dados de direitos autorais e a licença do arquivo: "
+"quem são os detentores dos direitos autorais e sob qual(is) licença(s) o "
+"arquivo é disponibilizado?"
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4396,6 +4548,9 @@ msgid ""
 "remove any information from headers in files of which you are not the sole "
 "author."
 msgstr ""
+"É altamente recomendável manter um formato consistente para esses cabeçalhos "
+"em todos os arquivos. No entanto, é importante não remover nenhuma "
+"informação dos cabeçalhos em arquivos dos quais você não seja o único autor."
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4405,6 +4560,10 @@ msgid ""
 "an `SPDX-License-Identifier` tag followed by an SPDX expression defined by "
 "the SPDX specifications."
 msgstr ""
+"Você deve informar os dados da licença do arquivo de código-fonte de maneira "
+"padronizada, para que computadores possam interpretá-los. Isso pode ser "
+"feito utilizando uma tag `SPDX-License-Identifier` seguida de uma expressão "
+"SPDX definida pelas especificações SPDX."
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4413,6 +4572,10 @@ msgid ""
 "sorted by year. They should list the actual copyright holder, which may be "
 "an organisation rather than the author. For example:"
 msgstr ""
+"Os avisos de direitos autorais em um cabeçalho de comentário devem seguir um "
+"formato consistente e estar ordenados por ano. Eles devem listar o detentor "
+"real dos direitos autorais, que pode ser uma organização em vez do autor. "
+"Por exemplo:"
 
 #. type: Fenced code block
 #: site/content/en/spec-2.0.md
@@ -4426,6 +4589,13 @@ msgid ""
 "  * SPDX-License-Identifier: GPL-2.0\n"
 "  */\n"
 msgstr ""
+" /*\n"
+"  * Copyright (c) 2017 Alice Commit <alice@example.com>\n"
+"  * Copyright (c) 2009-2016 Bob Denver <bob@example.com>\n"
+"  * Copyright (c) 2007 Empresa Exemplo <charlie@example.com>\n"
+"  * \n"
+"  * SPDX-License-Identifier: GPL-2.0\n"
+"  */\n"
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4433,6 +4603,9 @@ msgid ""
 "You should include information about your project's practices in the README "
 "or similar file.  This could be as simple as linking to these practices."
 msgstr ""
+"Você deve incluir informações sobre as práticas do seu projeto no arquivo "
+"README ou em um arquivo semelhante. Isso pode ser tão simples quanto "
+"adicionar um link para essas práticas."
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4444,6 +4617,12 @@ msgid ""
 "format does not support comments, you must provide the information "
 "separately in one of three ways:"
 msgstr ""
+"Todos os arquivos de código-fonte incluídos na compilação final do seu "
+"projeto (sejam eles integrais, modificados, parciais ou em forma compilada) "
+"devem conter informações de direitos autorais e licença. Se não for possível "
+"adicionar um cabeçalho ao arquivo — seja porque ele é um binário ou porque o "
+"formato não suporta comentários —, você deve fornecer as informações "
+"separadamente de uma das três maneiras a seguir:"
 
 #. type: Bullet: ' * '
 #: site/content/en/spec-2.0.md
@@ -4452,6 +4631,9 @@ msgid ""
 "regular comment header with all the necessary information to convey the "
 "license information about the file called `FILENAME`."
 msgstr ""
+"Você pode incluir um arquivo de texto chamado `ARQUIVO.license` contendo o "
+"cabeçalho de comentário padrão com todas as informações necessárias para "
+"especificar a licença do arquivo chamado `ARQUIVO`."
 
 #. type: Bullet: ' * '
 #: site/content/en/spec-2.0.md
@@ -4461,6 +4643,11 @@ msgid ""
 "doc/packaging-manuals/copyright-format/1.0/)  file format, and place a "
 "single copyright notice documenting those files."
 msgstr ""
+"Se você tiver muitos arquivos desse tipo, mas todos compartilharem o mesmo "
+"aviso de direitos autorais e a mesma licença, poderá utilizar o formato de "
+"arquivo [DEP-5/copyright](https://www.debian.org/doc/packaging-manuals/"
+"copyright-format/1.0/) e incluir um único aviso de direitos autorais que "
+"documente esses arquivos."
 
 #. type: Bullet: ' * '
 #: site/content/en/spec-2.0.md
@@ -4469,6 +4656,10 @@ msgid ""
 "in SPDX format (see practice 3), you may use this and do not need to "
 "separately include a `.license` file or DEP-5/copyright file."
 msgstr ""
+"Se você tiver uma maneira de gerar automaticamente um inventário dos "
+"arquivos incluídos no formato SPDX (veja a prática 3), poderá utilizá-lo e "
+"não precisará incluir separadamente um arquivo `.license` ou um arquivo DEP-"
+"5/copyright."
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4477,6 +4668,9 @@ msgid ""
 "build artefact, you are encouraged but not obliged to include license "
 "information for these too."
 msgstr ""
+"Se o seu projeto incluir documentação que não faz parte do artefato de "
+"compilação final, recomenda-se — embora não seja obrigatório — incluir "
+"também informações de licença para esses itens."
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
@@ -4488,6 +4682,13 @@ msgid ""
 "Corp, reference to `LicenseRef-BSD-2-Clause-Evil-Corp`, and include both "
 "those licenses separately in `LICENSES` (see practice 1)."
 msgstr ""
+"Se o código-fonte estiver licenciado sob uma licença como a `BSD-2-Clause`, "
+"na qual os textos da licença podem variar conforme o detentor dos direitos "
+"autorais, você deve fazer referência à licença específica em cada caso. "
+"Assim, para arquivos escritos por Alice, faça referência a `LicenseRef-BSD-2-"
+"Clause-Alice`; para arquivos escritos pela Evil Corp, faça referência a "
+"`LicenseRef-BSD-2-Clause-Evil-Corp`; e inclua ambas as licenças "
+"separadamente em `LICENSES` (veja a prática 1)."
 
 #. type: Bullet: ' * '
 #: site/content/en/spec-2.0.md
@@ -4495,6 +4696,8 @@ msgid ""
 "make sure the version control system is publicly accessible and take "
 "steps[^1] to ensure it will remain so,"
 msgstr ""
+"se certificar de que o sistema de controle de versão seja acessível "
+"publicamente e tome medidas[^1] para garantir que ele permaneça assim,"
 
 #. type: Bullet: ' * '
 #: site/content/en/spec-2.0.md
@@ -4505,6 +4708,11 @@ msgid ""
 "included, for example in the form of a bill of materials (see later), an "
 "automatically generated log file or similar,"
 msgstr ""
+"garantir que, caso alguém copie o repositório de código-fonte sem os "
+"metadados do sistema de controle de versão (por exemplo, ao criar um arquivo "
+"tar), os metadados relevantes para determinar os direitos autorais ainda "
+"estejam incluídos — seja na forma de uma lista de materiais (veja mais "
+"adiante), de um arquivo de log gerado automaticamente ou algo semelhante,"
 
 #. type: Fenced code block
 #: site/content/en/spec-2.0.md
@@ -4518,6 +4726,14 @@ msgid ""
 "  * SPDX-License-Identifier: GPL-3.0\n"
 "  */\n"
 msgstr ""
+" /*\n"
+"  * Este arquivo faz parte do projeto X. Ele está protegido por\n"
+"  * direitos autorais dos colaboradores registrados no histórico\n"
+"  * de controle de versão do arquivo, disponível em sua\n"
+"  * localização original: http://git.example.com/X/nome-do-arquivo.c\n"
+"  * \n"
+"  * SPDX-License-Identifier: GPL-3.0\n"
+"  */\n"
 
 #. type: Plain text
 #: site/content/en/spec-2.0.md
