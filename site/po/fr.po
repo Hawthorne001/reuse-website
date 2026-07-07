@@ -290,7 +290,7 @@ msgid ""
 msgstr ""
 "Voici à quoi ressemblera le badge d'un projet conforme à la norme REUSE. "
 "Vous pouvez cliquer sur le badge pour obtenir plus d'information : [![État "
-"de REUSE](https ://api.reuse.software/badge/git.fsfe.org/reuse/api)](https "
+"de REUSE](https://api.reuse.software/badge/git.fsfe.org/reuse/api)](https"
 "://api.reuse.software/info/git.fsfe.org/reuse/api)"
 
 #. type: Plain text
