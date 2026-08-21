@@ -1,1 +1,86 @@
-{}
+{
+    "noscript_warning": {
+        "other": "Disa veçori ndërvepruese nuk do të funksionojnë me JavaScript të çaktivizuar."
+    },
+    "table_of_contents": {
+        "other": "Tabela e Përmbajtjes"
+    },
+    "toggle_navigation": {
+        "other": "Ndrysho navigimin"
+    },
+    "tool_instructions": {
+        "other": "Udhëzimet e veglave për këtë hap"
+    },
+    "warning": {
+        "other": "Paralajmërim:"
+    },
+    "trans_inofficial": {
+        "other": "Po lexoni një përkthim jozyrtar të [faqes origjinale](%s)."
+    },
+    "trans_available": {
+        "other": "Përkthimet jozyrtare janë në dispozicion në:"
+    },
+    "and": {
+        "other": "dhe"
+    },
+    "menu_tutorial": {
+        "other": "Filloni"
+    },
+    "menu_faq": {
+        "other": "FAQ"
+    },
+    "menu_dev": {
+        "other": "Zhvilluesit"
+    },
+    "menu_spec": {
+        "other": "Specifikimi"
+    },
+    "menu_resources": {
+        "other": "Burimet"
+    },
+    "menu_supporters": {
+        "other": "Mbështetësit"
+    },
+    "menu_api": {
+        "other": "API"
+    },
+    "index_initiative_by": {
+        "other": "Një nismë nga"
+    },
+    "index_intro": {
+        "other": "Ne e bëjmë të lehtë licencimin për njerëzit dhe makinat. Ne zgjidhim një çështje themelore që licencimi i Software-it të Lirë e ka në burimin: me çfarë licence licencohet një skedar dhe kush i zotëron të drejtat e autorit? **Përshtatja e rekomandimeve tona është po aq e lehtë sa një-dy-tre**!"
+    },
+    "index_step1": {
+        "other": "Zgjidhni dhe jepni licencat"
+    },
+    "index_step2": {
+        "other": "Shto të drejtën e autorit dhe informacionin e licencimit në çdo skedar"
+    },
+    "index_step3": {
+        "other": "Konfirmo pajtueshmërinë RIPERDORIM"
+    },
+    "index_rationale": {
+        "other": "E drejta e autorit dhe licencimi është i vështirë, veçanërisht kur ripërdorni softuer nga projekte të ndryshme që lëshohen nën licenca të ndryshme. REUSE u nis nga [Free Software Foundation Europe](https://fsfe.org) (FSFE) për të ofruar një sërë rekomandimesh për ta bërë licencimin e projekteve tuaja të Software-it të Lirë **të lehtë, gjithëpërfshirëse, të paqarta dhe të lexueshme nga makina**."
+    },
+    "index_dev_head": {
+        "other": "Për zhvilluesit"
+    },
+    "index_dev_text": {
+        "other": "Licenca e projektit tuaj përcakton kushtet sipas të cilave të tjerët mund të ripërdorin programin tuaj. Kjo është arsyeja pse duhet të siguroheni që të jetë e qartë për të gjithë se cilat pjesë të softuerit tuaj janë nën cilën licencë. REUSE mbron qëllimet tuaja dhe ju ndihmon në këtë proces. Hidhini një sy [seksionit të mjeteve] (dev/) tonë për të mësuar rreth mjetit, përfshirjes në proceset CI/CD dhe më shumë."
+    },
+    "index_reuse_head": {
+        "other": "Ripërdorimi është bërë i thjeshtë"
+    },
+    "index_reuse_text": {
+        "other": "Software-i i Lirë ju mundëson të ndërtoni mbi punën e të tjerëve dhe për këtë arsye të rinovoni shpejt. Por sa më shumë komponentë të jashtëm të përdorni, aq më e vështirë është të mbani një pasqyrë të mbajtësve të të drejtave të autorit dhe zgjedhjeve të tyre të licencimit. Me REUSE, çdo skedar përmban informacionin e nevojshëm dhe depoja juaj përmban në mënyrë transparente të gjitha licencat e përdorura."
+    },
+    "index_legal_head": {
+        "other": "Pajtueshmëria me licencën"
+    },
+    "index_legal_text": {
+        "other": "Ka shumë mjete që ju ndihmojnë në pajtueshmërinë me licencën për softuerin, shumë duke përdorur bazat e të dhënave dhe heuristics fuzzy. Një projekt i përputhshëm me RIPERDORIM e bën shumë më të lehtë punën e ekspertëve ligjorë dhe zyrtarëve të pajtueshmërisë. Krijimi i një faturë materialesh mund të arrihet vetëm me një komandë të thjeshtë. RIPERDORIMI [nuk zevendeson mjetet e tjera](krahasim/), eshte nje shtese e shumepritur."
+    },
+    "all_specifications": {
+        "other": "Të gjitha versionet e specifikimeve mund të gjenden në <{{ .specifications }}>."
+    }
+}
